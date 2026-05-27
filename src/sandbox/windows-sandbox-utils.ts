@@ -20,8 +20,7 @@ import type { SandboxDependencyCheck } from './linux-sandbox-utils.js'
  * token-membership check; WFP via providerData-tag enumeration under
  * the configured sublayer). There is no marker file.
  *
- * Filesystem restrictions are NOT enforced on Windows in this batch;
- * `denyRead`/`denyWrite` arrive in PR 4–6.
+ * Filesystem restrictions are NOT enforced on Windows yet.
  */
 
 // ────────────────────────────────────────────────────────────────────
@@ -97,7 +96,7 @@ function repoRoot(): string {
  *      (post-`npm run build` shape, when running from compiled output).
  *
  * Resolution via the optional `@anthropic-ai/sandbox-runtime-win32-*`
- * platform packages lands in PR 7.
+ * platform packages is added separately.
  *
  * @throws if none exist.
  */
@@ -290,7 +289,7 @@ export function installWindowsSandbox(
     `[Sandbox Windows] install exit=${r.status}: ${r.stderr || r.stdout}`,
   )
 
-  // srt-win install exit-code contract (batch 02b):
+  // srt-win install exit-code contract:
   //   0  ok
   //   10 user cancelled UAC elevation
   //   11 group create failed

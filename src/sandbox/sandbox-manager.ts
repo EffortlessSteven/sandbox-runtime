@@ -939,7 +939,7 @@ function getConfig(): SandboxRuntimeConfig | undefined {
  *
  * Filesystem changes (denyRead/denyWrite) are NOT applied live:
  * macOS bakes them into the seatbelt profile at wrap time, and
- * Windows (batch 04+) will need an explicit re-stamp. To change FS
+ * Windows will need an explicit re-stamp. To change FS
  * restrictions, reset() then initialize() with the new config.
  *
  * @param newConfig - The new configuration to use
